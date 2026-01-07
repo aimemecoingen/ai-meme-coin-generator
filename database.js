@@ -1,79 +1,41 @@
 /**
- * Simple JSON File Database
- * For production: use MongoDB, PostgreSQL, or Firebase
+ * In-Memory Database for Vercel Serverless
+ * NOTE: Data resets on each deployment!
+ * For production: upgrade to MongoDB, PostgreSQL, or Vercel KV
  */
 
-const fs = require('fs');
-const path = require('path');
-
-const DB_DIR = path.join(__dirname, 'data');
-const USERS_FILE = path.join(DB_DIR, 'users.json');
-const COINS_FILE = path.join(DB_DIR, 'coins.json');
-
-// Create data directory if it doesn't exist
-if (!fs.existsSync(DB_DIR)) {
-    fs.mkdirSync(DB_DIR, { recursive: true });
-}
-
-// Initialize files if they don't exist
-if (!fs.existsSync(USERS_FILE)) {
-    fs.writeFileSync(USERS_FILE, JSON.stringify({}));
-}
-
-if (!fs.existsSync(COINS_FILE)) {
-    fs.writeFileSync(COINS_FILE, JSON.stringify({}));
-}
+// In-memory storage (resets on deployment)
+let usersDB = {};
+let coinsDB = {};
 
 /**
- * Read users from file
+ * Read users from memory
  */
 function readUsers() {
-    try {
-        const data = fs.readFileSync(USERS_FILE, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error('Error reading users:', error);
-        return {};
-    }
+    return usersDB;
 }
 
 /**
- * Write users to file
+ * Write users to memory
  */
 function writeUsers(users) {
-    try {
-        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-        return true;
-    } catch (error) {
-        console.error('Error writing users:', error);
-        return false;
-    }
+    usersDB = users;
+    return true;
 }
 
 /**
- * Read coins from file
+ * Read coins from memory
  */
 function readCoins() {
-    try {
-        const data = fs.readFileSync(COINS_FILE, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error('Error reading coins:', error);
-        return {};
-    }
+    return coinsDB;
 }
 
 /**
- * Write coins to file
+ * Write coins to memory
  */
 function writeCoins(coins) {
-    try {
-        fs.writeFileSync(COINS_FILE, JSON.stringify(coins, null, 2));
-        return true;
-    } catch (error) {
-        console.error('Error writing coins:', error);
-        return false;
-    }
+    coinsDB = coins;
+    return true;
 }
 
 /**
