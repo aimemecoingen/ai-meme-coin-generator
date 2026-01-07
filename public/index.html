@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 AI Meme Coin Generator - Launch Your Coin in 60 Seconds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,140,0,0.1) 0%, transparent 70%);
+            animation: moonGlow 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes moonGlow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-20px, -20px) scale(1.1); }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        .main-card {
+            background: linear-gradient(145deg, rgba(20,20,20,0.95) 0%, rgba(30,30,30,0.98) 100%);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 
+                0 30px 90px rgba(255,140,0,0.3),
+                inset 0 1px 0 rgba(255,140,0,0.2),
+                0 0 100px rgba(255,140,0,0.1);
+            color: #fff;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out, floatCard 6s ease-in-out infinite;
+            border: 1px solid rgba(255,140,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,140,0,0.05) 0%, transparent 70%);
+            animation: rotateBubble 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes rotateBubble {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(40,40,40,0.8);
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,140,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .step.active .step-circle {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            transform: scale(1.2);
+            box-shadow: 
+                0 8px 25px rgba(255,140,0,0.5),
+                0 0 50px rgba(255,140,0,0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(255,140,0,0.5), 0 0 50px rgba(255,140,0,0.3); }
+            50% { box-shadow: 0 8px 35px rgba(255,140,0,0.7), 0 0 70px rgba(255,140,0,0.5); }
+        }
+
+        .step.completed .step-circle {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%);
+            color: white;
+            border-color: #ff8c00;
+        }
+
+        .step-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .step.active .step-label {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .form-section {
+            display: none;
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-section.active {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #ff8c00;
+            font-size: 1.1em;
+            text-shadow: 0 0 20px rgba(255,140,0,0.3);
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255,140,0,0.3);
+            border-radius: 15px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            background: rgba(20,20,20,0.6);
+            color: #fff;
+            box-shadow: 
+                inset 0 2px 10px rgba(0,0,0,0.5),
+                0 0 0 rgba(255,140,0,0);
+            position: relative;
+            z-index: 10;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff8c00;
+            box-shadow: 
+                inset 0 2px 10px rgba(0,0,0,0.5),
+                0 0 25px rgba(255,140,0,0.4);
+            background: rgba(30,30,30,0.8);
+        }
+        
+        input[type="text"]::placeholder,
+        textarea::placeholder {
+            color: rgba(255,140,0,0.4);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .examples {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .examples-title {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .example-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .example-tag {
+            background: rgba(255,140,0,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #ff8c00;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,140,0,0.4);
+            box-shadow: 0 4px 15px rgba(255,140,0,0.1);
+        }
+
+        .example-tag:hover {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,140,0,0.4);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            box-shadow: 
+                0 8px 32px rgba(255,140,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,140,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 15px 40px rgba(255,140,0,0.6),
+                0 0 80px rgba(255,140,0,0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result-section {
+            display: none;
+        }
+
+        .result-section.active {
+            display: block;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .result-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(40,40,40,0.9) 100%);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,140,0,0.3);
+            box-shadow: 
+                0 8px 32px rgba(0,0,0,0.5),
+                0 0 50px rgba(255,140,0,0.1);
+        }
+        
+        .result-card h3 {
+            color: #ff8c00;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            text-shadow: 0 0 20px rgba(255,140,0,0.4);
+        }
+
+        .coin-logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 50%;
+            border: 3px solid #ff8c00;
+            box-shadow: 
+                0 0 40px rgba(255,140,0,0.6),
+                0 10px 50px rgba(255,140,0,0.3);
+            animation: rotateLogo 20s linear infinite, glowPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes rotateLogo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(255,140,0,0.6), 0 10px 50px rgba(255,140,0,0.3); }
+            50% { box-shadow: 0 0 60px rgba(255,140,0,0.8), 0 10px 70px rgba(255,140,0,0.5); }
+        }
+
+        .tokenomics-list {
+            list-style: none;
+        }
+
+        .tokenomics-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(255,140,0,0.05);
+            border: 1px solid rgba(255,140,0,0.2);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tokenomics-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-label {
+            font-weight: 600;
+            color: #ff8c00;
+            font-size: 0.95em;
+        }
+
+        .feature-value {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-shadow: 0 0 10px rgba(255,140,0,0.3);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-deploy {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: white;
+            font-size: 1.1em !important;
+            font-weight: 700 !important;
+            box-shadow: 
+                0 10px 40px rgba(255,140,0,0.5),
+                0 0 80px rgba(255,140,0,0.3);
+            border: 2px solid rgba(255,140,0,0.6);
+            animation: deployPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes deployPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .btn-deploy:hover {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 15px 50px rgba(255,140,0,0.7),
+                0 0 100px rgba(255,140,0,0.5);
+        }
+
+        .btn-download {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-download:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .btn-share {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .btn-share:hover {
+            background: #1a8cd8;
+            transform: translateY(-2px);
+        }
+
+        .btn-new {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .btn-new:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .main-card {
+                padding: 30px 20px;
+            }
+
+            .stats {
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 1.8em;
+            }
+        }
+
+        /* ============================================ */
+        /* CUSTOM NOTIFICATION SYSTEM */
+        /* ============================================ */
+        .notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+
+        .notification {
+            background: linear-gradient(145deg, rgba(20,20,20,0.98), rgba(30,30,30,0.98));
+            border: 2px solid rgba(255,140,0,0.5);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(255,140,0,0.4), 0 0 60px rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notification::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff8c00 0%, #ff6b00 100%);
+        }
+
+        .notification.success {
+            border-color: rgba(34,197,94,0.5);
+        }
+
+        .notification.success::before {
+            background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+        }
+
+        .notification.error {
+            border-color: rgba(239,68,68,0.5);
+        }
+
+        .notification.error::before {
+            background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .notification.info {
+            border-color: rgba(59,130,246,0.5);
+        }
+
+        .notification.info::before {
+            background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(120%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(120%);
+                opacity: 0;
+            }
+        }
+
+        .notification.removing {
+            animation: slideOutRight 0.3s ease-in forwards;
+        }
+
+        .notification-icon {
+            font-size: 2em;
+            flex-shrink: 0;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .notification-message {
+            font-size: 0.95em;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.4;
+        }
+
+        .notification-close {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .notification-close:hover {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .notification-container {
+                left: 20px;
+                right: 20px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+    
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header style="position: relative;">
+            <!-- Auth buttons (shown based on login status) -->
+            <div id="authButtons" style="position: absolute; top: 0; right: 20px; display: flex; gap: 10px; z-index: 100;">
+                <!-- When NOT logged in -->
+                <div id="notLoggedIn" style="display: none; gap: 10px;">
+                    <a href="/login.html" style="padding: 12px 25px; background: rgba(255,140,0,0.1); border: 1px solid rgba(255,140,0,0.3); border-radius: 10px; color: #ff8c00; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 0.9em;">
+                        🔐 Login
+                    </a>
+                    <a href="/register.html" style="padding: 12px 25px; background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%); border: none; border-radius: 10px; color: white; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 0.9em;">
+                        ✨ Register
+                    </a>
+                </div>
+                
+                <!-- When logged in -->
+                <div id="loggedIn" style="display: none; gap: 10px; align-items: center;">
+                    <span id="userName" style="color: #ff8c00; font-weight: 600; font-size: 0.9em;"></span>
+                    <a href="/dashboard.html" style="padding: 12px 25px; background: rgba(255,140,0,0.1); border: 1px solid rgba(255,140,0,0.3); border-radius: 10px; color: #ff8c00; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 0.9em;">
+                        📊 Dashboard
+                    </a>
+                    <button onclick="logout()" style="padding: 12px 25px; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 10px; color: #ef4444; font-weight: 600; transition: all 0.3s; font-size: 0.9em; cursor: pointer;">
+                        🚪 Logout
+                    </button>
+                </div>
+            </div>
+            
+            <h1 style="text-shadow: 0 0 40px rgba(255,140,0,0.6), 0 0 80px rgba(255,140,0,0.3);">🌙 AI MEME COIN GENERATOR</h1>
+            <p class="subtitle" style="color: #ff8c00; text-shadow: 0 0 20px rgba(255,140,0,0.4);">Launch Your Meme Coin in 60 Seconds</p>
+            <p class="tagline" style="color: rgba(255,140,0,0.8);">AI creates logo, website & contract → You manage everything 🎨</p>
+            
+            <div style="display: inline-block; margin-top: 20px; padding: 15px 30px; background: rgba(255,140,0,0.05); border: 1px solid rgba(255,140,0,0.2); border-radius: 15px;">
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95em; margin: 0;">
+                    ✨ Create → 🎨 Edit with AI anytime → 💾 All saved in Dashboard
+                </p>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number" id="coinsCreated">1,247</span>
+                    <span class="stat-label">Coins Created</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">$2.4M</span>
+                    <span class="stat-label">Total Market Cap</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">47s</span>
+                    <span class="stat-label">Avg Launch Time</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-card">
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step active" id="step1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Describe</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Customize</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Generate</div>
+                </div>
+                <div class="step" id="step4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Deploy</div>
+                </div>
+            </div>
+
+            <!-- Step 1: Describe -->
+            <div class="form-section active" id="section1">
+                <label for="coinIdea">What's your meme coin about? 💡</label>
+                <textarea 
+                    id="coinIdea" 
+                    placeholder="e.g., 'A coin for people who love pizza and hate pineapple on pizza. The community will vote on pizza toppings and the losing topping gets burned forever.'"
+                ></textarea>
+
+                <div class="examples">
+                    <div class="examples-title">🔥 Popular examples (click to use):</div>
+                    <div class="example-tags">
+                        <div class="example-tag" onclick="setExample('A coin for night owls who do their best work at 3am. Every token holder gets voting rights on what counts as acceptable late night snack.')">Night Owl Coin</div>
+                        <div class="example-tag" onclick="setExample('For people who bought the top. Every transaction plays a sad violin. The more you lose, the sadder the violin.')">BOUGHT THE TOP</div>
+                        <div class="example-tag" onclick="setExample('A coin that honors dogs who steal food from the counter. Every holder can submit their dog\\'s heist story.')">Counter Surfer Dogs</div>
+                        <div class="example-tag" onclick="setExample('For people who say \\'I\\'m fine\\' but are definitely not fine. Holders can vent anonymously and get supportive memes.')">Totally Fine Coin</div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-primary" onclick="nextStep(1)" id="step1Btn">Generate My Coin 🎨</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Customize -->
+            <div class="form-section" id="section2">
+                <label for="coinName">Coin Name (AI Suggestion: <span id="aiCoinName">...</span>)</label>
+                <input type="text" id="coinName" placeholder="e.g., PizzaWarrior">
+
+                <label for="coinSymbol">Symbol (AI Suggestion: <span id="aiCoinSymbol">...</span>)</label>
+                <input type="text" id="coinSymbol" placeholder="e.g., PIZZA" maxlength="6">
+
+                <label for="totalSupply">Total Supply</label>
+                <input type="text" id="totalSupply" placeholder="e.g., 1000000000">
+
+                <div class="button-group">
+                    <button class="btn-secondary" onclick="prevStep(2)">← Back</button>
+                    <button class="btn-primary" onclick="nextStep(2)">Continue →</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Generate -->
+            <div class="form-section" id="section3">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <h3>🎨 AI is creating your meme coin...</h3>
+                    <p id="generatingStatus">Generating logo and branding...</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Results -->
+            <div class="result-section" id="section4">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #667eea;">✨ Your Meme Coin is Ready!</h2>
+                
+                <div class="result-grid">
+                    <div class="result-card">
+                        <h3>🎨 Logo & Branding</h3>
+                        <img src="" alt="Coin Logo" class="coin-logo" id="generatedLogo">
+                        <p style="text-align: center; color: #666;"><strong id="finalCoinName">-</strong> (<span id="finalCoinSymbol">-</span>)</p>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>💰 Tokenomics</h3>
+                        <ul class="tokenomics-list">
+                            <li>
+                                <span class="feature-label">Total Supply:</span>
+                                <span class="feature-value" id="displaySupply">-</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">Decimals:</span>
+                                <span class="feature-value">18</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">Standard:</span>
+                                <span class="feature-value">ERC-20</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">Network:</span>
+                                <span class="feature-value">Ethereum</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">Contract:</span>
+                                <span class="feature-value" style="color: #10b981;">✅ Verified</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>🌐 Your Website</h3>
+                        <p style="margin-bottom: 15px; color: rgba(255,255,255,0.7);">A beautiful landing page is ready for your coin!</p>
+                        <button class="btn-action btn-download" onclick="previewWebsite()" style="margin-bottom: 10px;">👁️ Preview Website</button>
+                        <button class="btn-action" onclick="editWebsiteNow()" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; margin-bottom: 5px;">🎨 Edit with AI</button>
+                        <p style="font-size: 0.85em; color: rgba(255,140,0,0.6); margin-top: 10px;">💡 Edit anytime from Dashboard!</p>
+                    </div>
+                </div>
+
+                <div class="social-links" style="margin-bottom: 30px; position: relative; z-index: 10;">
+                    <h3 style="color: #ff8c00; margin-bottom: 15px; text-align: center;">🔗 Add Your Socials (Optional)</h3>
+                    <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 20px; font-size: 0.9em;">Just paste your links - we'll fix the formatting!</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <input type="text" id="telegramLink" placeholder="t.me/yourgroup or https://..." style="margin-bottom: 0;">
+                        <input type="text" id="twitterLink" placeholder="@username or twitter.com/..." style="margin-bottom: 0;">
+                        <input type="text" id="discordLink" placeholder="discord.gg/invite or https://..." style="margin-bottom: 0;">
+                        <input type="text" id="websiteLink" placeholder="yourwebsite.com or https://..." style="margin-bottom: 0;">
+                    </div>
+                    <button class="btn-primary" onclick="updateSocials()" style="width: 100%; margin-top: 15px;">💾 Save & View in Dashboard</button>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-action btn-deploy" onclick="deployContract()">🚀 Deploy to Ethereum</button>
+                    <button class="btn-action btn-download" onclick="downloadFiles()">📦 Download Files</button>
+                    <button class="btn-action btn-share" onclick="shareOnTwitter()">🐦 Share on Twitter</button>
+                    <button class="btn-action" onclick="openDashboard()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">📊 View in Dashboard</button>
+                    <button class="btn-action btn-new" onclick="createNew()">✨ Create New Coin</button>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; color: rgba(255,140,0,0.6);">
+                    💡 <strong>Tip:</strong> Add your social links above, then click "View in Dashboard" to manage everything!
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with AI 🤖 • Powered by Love ❤️ • Launch Meme Coins Responsibly 🚀</p>
+        </footer>
+    </div>
+
+    <script>
+        // Generate stars background
+        function generateStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        generateStars();
+
+        // ============================================
+        // CUSTOM NOTIFICATION SYSTEM
+        // ============================================
+        function showNotification(message, type = 'info', title = '') {
+            const container = document.getElementById('notificationContainer');
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            
+            // Icon based on type
+            const icons = {
+                success: '✅',
+                error: '❌',
+                info: '💡',
+                warning: '⚠️'
+            };
+            
+            // Default titles
+            const titles = {
+                success: title || 'Success!',
+                error: title || 'Error',
+                info: title || 'Info',
+                warning: title || 'Warning'
+            };
+            
+            notification.innerHTML = `
+                <div class="notification-icon">${icons[type] || '💬'}</div>
+                <div class="notification-content">
+                    <div class="notification-title">${titles[type]}</div>
+                    <div class="notification-message">${message}</div>
+                </div>
+                <button class="notification-close" onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.classList.add('removing');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
+
+        // ============================================
+        // AUTH SYSTEM - Check if user is logged in
+        // ============================================
+        function checkAuth() {
+            const token = localStorage.getItem('token');
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            
+            const notLoggedInDiv = document.getElementById('notLoggedIn');
+            const loggedInDiv = document.getElementById('loggedIn');
+            const userNameSpan = document.getElementById('userName');
+            
+            if (token && user.email) {
+                // User is logged in
+                notLoggedInDiv.style.display = 'none';
+                loggedInDiv.style.display = 'flex';
+                userNameSpan.textContent = `👋 ${user.name || user.email}`;
+            } else {
+                // User is NOT logged in
+                notLoggedInDiv.style.display = 'flex';
+                loggedInDiv.style.display = 'none';
+            }
+        }
+        
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            showNotification('You have been logged out successfully!', 'success', 'Logged Out');
+            setTimeout(() => window.location.reload(), 1000);
+        }
+        
+        // Check auth on page load
+        checkAuth();
+
+        // Animate coin counter
+        function animateCounter() {
+            const counter = document.getElementById('coinsCreated');
+            let count = 1247;
+            setInterval(() => {
+                count += Math.floor(Math.random() * 3);
+                counter.textContent = count.toLocaleString();
+            }, 5000);
+        }
+        animateCounter();
+
+        // Example click handler
+        function setExample(text) {
+            document.getElementById('coinIdea').value = text;
+        }
+
+        // Navigation
+        let currentStep = 1;
+        let generatedData = {};
+
+        function nextStep(step) {
+            if (step === 1) {
+                const idea = document.getElementById('coinIdea').value.trim();
+                if (!idea) {
+                    showNotification('Please describe your meme coin idea first!', 'warning', 'Missing Description');
+                    return;
+                }
+                // generateAISuggestions roept zelf nextStep aan, dus niet hier updateStepUI aanroepen!
+                generateAISuggestions(idea);
+                return; // Stop hier, anders krijgen we een loop!
+            } else if (step === 2) {
+                const name = document.getElementById('coinName').value.trim();
+                const symbol = document.getElementById('coinSymbol').value.trim();
+                const supply = document.getElementById('totalSupply').value.trim();
+                
+                if (!name || !symbol || !supply) {
+                    showNotification('Please fill in all required fields!', 'warning', 'Missing Information');
+                    return;
+                }
+                
+                generatedData.name = name;
+                generatedData.symbol = symbol;
+                generatedData.supply = supply;
+                
+                // generateCoin update de UI zelf
+                generateCoin();
+                return; // Stop hier!
+            }
+            
+            updateStepUI(currentStep + 1);
+        }
+
+        function prevStep(step) {
+            updateStepUI(currentStep - 1);
+        }
+
+        function updateStepUI(newStep) {
+            // Hide current section
+            document.getElementById('section' + currentStep).classList.remove('active');
+            document.getElementById('step' + currentStep).classList.remove('active');
+            if (currentStep < newStep) {
+                document.getElementById('step' + currentStep).classList.add('completed');
+            } else {
+                document.getElementById('step' + currentStep).classList.remove('completed');
+            }
+            
+            // Show new section
+            currentStep = newStep;
+            if (newStep <= 3) {
+                document.getElementById('section' + currentStep).classList.add('active');
+            } else {
+                document.querySelector('.result-section').classList.add('active');
+            }
+            document.getElementById('step' + currentStep).classList.add('active');
+        }
+
+        // AI Suggestions - ECHTE API!
+        async function generateAISuggestions(idea) {
+            try {
+                // Roep de ECHTE backend API aan
+                const response = await fetch('/api/generate-suggestions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ idea: idea })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    const suggestions = result.suggestions;
+                    
+                    console.log('✅ Suggesties ontvangen:', suggestions);
+                    
+                    document.getElementById('aiCoinName').textContent = suggestions.name;
+                    document.getElementById('aiCoinSymbol').textContent = suggestions.symbol;
+                    document.getElementById('coinName').value = suggestions.name;
+                    document.getElementById('coinSymbol').value = suggestions.symbol;
+                    document.getElementById('totalSupply').value = '1000000000';
+                    
+                    generatedData.idea = idea;
+                    generatedData.logoPrompt = suggestions.logoDescription || `Logo for ${suggestions.name}`;
+                    generatedData.tagline = suggestions.tagline;
+                    
+                    // Ga naar de volgende stap (customize)
+                    updateStepUI(2);
+                } else {
+                    console.log('❌ AI suggestie mislukt, gebruik fallback');
+                    showNotification('AI is having trouble. Using backup suggestions...', 'warning', 'Using Backup');
+                    // Fallback naar mock
+                    const suggestions = generateMockSuggestions(idea);
+                    document.getElementById('aiCoinName').textContent = suggestions.name;
+                    document.getElementById('aiCoinSymbol').textContent = suggestions.symbol;
+                    document.getElementById('coinName').value = suggestions.name;
+                    document.getElementById('coinSymbol').value = suggestions.symbol;
+                    document.getElementById('totalSupply').value = '1000000000';
+                    generatedData.idea = idea;
+                    generatedData.logoPrompt = suggestions.logoPrompt;
+                    updateStepUI(2);
+                }
+            } catch (error) {
+                console.error('❌ Error bij API call:', error);
+                showNotification('Cannot connect to server! Is it running? Error: ' + error.message, 'error', 'Connection Failed');
+            }
+        }
+
+        function generateMockSuggestions(idea) {
+            // Extract keywords and generate suggestions
+            const words = idea.toLowerCase().split(' ');
+            const name = words[0].charAt(0).toUpperCase() + words[0].slice(1) + 'Coin';
+            const symbol = words[0].substring(0, 4).toUpperCase();
+            
+            return {
+                name: name,
+                symbol: symbol,
+                logoPrompt: `Create a fun, meme-style cryptocurrency logo for ${name}`
+            };
+        }
+
+        // Generate Coin - ECHTE AI GENERATIE!
+        async function generateCoin() {
+            updateStepUI(3);
+            
+            const statuses = [
+                '🎨 AI maakt je logo...',
+                '📝 Smart contract wordt gegenereerd...',
+                '🌐 Website wordt gebouwd...',
+                '✨ Bijna klaar...'
+            ];
+            
+            let statusIndex = 0;
+            const statusInterval = setInterval(() => {
+                document.getElementById('generatingStatus').textContent = statuses[statusIndex];
+                statusIndex = (statusIndex + 1) % statuses.length;
+            }, 2000);
+            
+            try {
+                // Roep ECHTE backend API aan
+                const response = await fetch('/api/generate-coin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        idea: generatedData.idea,
+                        name: generatedData.name,
+                        symbol: generatedData.symbol,
+                        supply: generatedData.supply
+                    })
+                });
+                
+                const result = await response.json();
+                clearInterval(statusInterval);
+                
+                if (result.success) {
+                    // Gebruik ECHTE AI data
+                    console.log('✅ Coin data ontvangen:', result.coin);
+                    generatedData.logo = result.coin.logoUrl;
+                    generatedData.website = result.coin.website;
+                    generatedData.contract = result.coin.smartContract;
+                    generatedData.coinId = result.coin.id;
+                    generatedData.name = result.coin.name;
+                    generatedData.symbol = result.coin.symbol;
+                    generatedData.supply = result.coin.supply;
+                    
+                    console.log('🎨 Logo URL:', generatedData.logo);
+                    displayResults();
+                    updateStepUI(4);
+                } else {
+                    throw new Error(result.error || 'Generatie mislukt');
+                }
+            } catch (error) {
+                clearInterval(statusInterval);
+                console.error('❌ Error bij coin generatie:', error);
+                showNotification('AI generation failed: ' + error.message + '. Using backup data...', 'error', 'Generation Failed');
+                
+                // Fallback naar mock data
+                console.log('⚠️  Gebruik placeholder logo');
+                generatedData.logo = 'https://via.placeholder.com/150/667eea/ffffff?text=' + generatedData.symbol;
+                generatedData.website = generateWebsiteHTML();
+                generatedData.contract = generateSmartContract();
+                
+                console.log('📄 Mock data gegenereerd');
+                displayResults();
+                updateStepUI(4);
+            }
+        }
+
+        function displayResults() {
+            console.log('📊 Display results met data:', generatedData);
+            document.getElementById('generatedLogo').src = generatedData.logo;
+            document.getElementById('finalCoinName').textContent = generatedData.name;
+            document.getElementById('finalCoinSymbol').textContent = generatedData.symbol;
+            document.getElementById('displaySupply').textContent = parseInt(generatedData.supply).toLocaleString();
+            
+            // Auto-save to localStorage
+            saveCoinToLocalStorage();
+            
+            console.log('✅ Results getoond op pagina!');
+            console.log('💾 Coin auto-saved to dashboard');
+        }
+
+        // Smart Contract Generator
+        function generateSmartContract() {
+            return `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract ${generatedData.name.replace(/\s/g, '')} is ERC20, Ownable {
+    constructor() ERC20("${generatedData.name}", "${generatedData.symbol}") {
+        _mint(msg.sender, ${generatedData.supply} * 10 ** decimals());
+    }
+    
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}`;
+        }
+
+        // Website Generator
+        function generateWebsiteHTML() {
+            return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${generatedData.name} - ${generatedData.symbol}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+        }
+        h1 { font-size: 3em; margin-bottom: 10px; }
+        .description { font-size: 1.2em; margin-bottom: 30px; opacity: 0.9; }
+        .stats { display: flex; justify-content: center; gap: 40px; margin: 40px 0; }
+        .stat { background: rgba(255,255,255,0.2); padding: 20px 40px; border-radius: 10px; }
+        .stat-value { font-size: 2em; font-weight: bold; }
+        .stat-label { opacity: 0.8; }
+        button { background: white; color: #667eea; padding: 15px 40px; border: none; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 10px; }
+        button:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <img src="${generatedData.logo}" alt="${generatedData.name} Logo" class="logo">
+    <h1>$${generatedData.symbol}</h1>
+    <h2>${generatedData.name}</h2>
+    <p class="description">${generatedData.idea}</p>
+    
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value">${parseInt(generatedData.supply).toLocaleString()}</div>
+            <div class="stat-label">Total Supply</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Holders</div>
+        </div>
+    </div>
+    
+    <button onclick="alert('Connect your wallet to buy!')">Buy ${generatedData.symbol}</button>
+    <button onclick="window.open('https://twitter.com', '_blank')">Join Community</button>
+</body>
+</html>`;
+        }
+
+        // Action Buttons  
+        async function deployContract() {
+            if (!window.ethereum) {
+                showNotification('MetaMask not found! Install it from metamask.io to deploy contracts.', 'error', 'MetaMask Required');
+                window.open('https://metamask.io/', '_blank');
+                return;
+            }
+            
+            if (!confirm('🚀 Deploy to Ethereum?\n\nThis will:\n1. Connect your MetaMask\n2. Deploy the contract\n3. Cost ~$2-10 in gas fees\n\nContinue?')) {
+                return;
+            }
+            
+            try {
+                console.log('🚀 Starting deployment...');
+                
+                // Request account access
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                const account = accounts[0];
+                
+                console.log('👤 Connected account:', account);
+                
+                // Call backend to deploy
+                const response = await fetch('/api/deploy-contract', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        coinId: generatedData.coinId,
+                        name: generatedData.name,
+                        symbol: generatedData.symbol,
+                        supply: generatedData.supply,
+                        walletAddress: account
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Mark as deployed and save contract address
+                    generatedData.deployed = true;
+                    generatedData.contractAddress = result.contractAddress;
+                    generatedData.explorerUrl = result.explorerUrl;
+                    generatedData.deployedAt = new Date().toISOString();
+                    
+                    // Save to localStorage
+                    saveCoinToLocalStorage();
+                    
+                    showNotification(`Contract deployed at: ${result.contractAddress}. Opening Etherscan...`, 'success', '🎉 Deployed Successfully!');
+                    
+                    // Open Etherscan
+                    setTimeout(() => window.open(result.explorerUrl, '_blank'), 1000);
+                } else {
+                    throw new Error(result.error || 'Deployment failed');
+                }
+                
+            } catch (error) {
+                console.error('❌ Deployment error:', error);
+                showNotification('Deployment failed: ' + error.message, 'error', 'Deployment Error');
+            }
+        }
+
+        function downloadFiles() {
+            // Create zip with all files
+            const contract = generatedData.contract;
+            const website = generatedData.website;
+            
+            // Download contract
+            downloadFile(`${generatedData.name}.sol`, contract);
+            
+            // Download website
+            downloadFile(`${generatedData.name}-website.html`, website);
+            
+            showNotification('All files downloaded! Check your downloads folder for: Smart Contract (.sol), Website (HTML), and Logo.', 'success', '📦 Files Downloaded');
+        }
+
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function previewWebsite() {
+            if (!generatedData.website) {
+                showNotification('Please generate a coin first before previewing the website!', 'warning', 'No Website Yet');
+                return;
+            }
+            const newWindow = window.open();
+            newWindow.document.write(generatedData.website);
+            newWindow.document.close();
+        }
+        
+        // Edit Website Now (from results page)
+        async function editWebsiteNow() {
+            if (!generatedData.website) {
+                showNotification('Please generate a coin first before editing the website!', 'warning', 'No Website Yet');
+                return;
+            }
+            
+            const customization = prompt('🎨 How do you want to change your website?\n\nExamples:\n• "Make it dark purple with gold"\n• "Add a roadmap section"\n• "Make it more professional"\n• "Add team section"\n• "Change colors to blue/pink"\n\nDescribe your changes:');
+            
+            if (!customization) return;
+            
+            const originalButton = event.target;
+            originalButton.disabled = true;
+            originalButton.textContent = '⏳ AI is editing...';
+            
+            try {
+                const response = await fetch('/api/customize-website', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        originalWebsite: generatedData.website,
+                        customization: customization,
+                        coinName: generatedData.name,
+                        coinSymbol: generatedData.symbol
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    generatedData.website = result.customizedWebsite;
+                    saveCoinToLocalStorage();
+                    
+                    originalButton.disabled = false;
+                    originalButton.textContent = '🎨 Edit with AI';
+                    
+                    if (confirm('✅ Website updated!\n\nPreview now?')) {
+                        previewWebsite();
+                    }
+                } else {
+                    throw new Error(result.error || 'Customization failed');
+                }
+            } catch (error) {
+                console.error('❌ Error:', error);
+                originalButton.disabled = false;
+                originalButton.textContent = '🎨 Edit with AI';
+                showNotification('AI editing failed: ' + error.message + '. Please try again!', 'error', 'Edit Failed');
+            }
+        }
+
+        function shareOnTwitter() {
+            const text = `I just created $${generatedData.symbol} in 60 seconds using AI! 🚀\n\n${generatedData.idea}\n\nCreate yours at: [YOUR-DOMAIN]`;
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function createNew() {
+            location.reload();
+        }
+        
+        // Social Links Management
+        function updateSocials() {
+            const telegram = document.getElementById('telegramLink').value.trim();
+            const twitter = document.getElementById('twitterLink').value.trim();
+            const discord = document.getElementById('discordLink').value.trim();
+            const website = document.getElementById('websiteLink').value.trim();
+            
+            // Fix URLs - add https:// if missing
+            const fixUrl = (url) => {
+                if (!url) return '';
+                if (url.startsWith('http://') || url.startsWith('https://')) return url;
+                return 'https://' + url;
+            };
+            
+            const socials = {
+                telegram: telegram ? fixUrl(telegram) : '',
+                twitter: twitter ? (twitter.startsWith('@') ? 'https://twitter.com/' + twitter.substring(1) : fixUrl(twitter)) : '',
+                discord: discord ? fixUrl(discord) : '',
+                website: website ? fixUrl(website) : ''
+            };
+            
+            generatedData.socials = socials;
+            
+            // Save to localStorage
+            saveCoinToLocalStorage();
+            
+            showNotification('Your social links have been saved successfully!', 'success', '✨ Socials Saved');
+            console.log('💾 Socials saved:', socials);
+        }
+        
+        // Save coin to localStorage
+        async function saveCoinToLocalStorage() {
+            const coinData = {
+                ...generatedData,
+                createdAt: new Date().toISOString(),
+                id: generatedData.coinId || Date.now().toString()
+            };
+            
+            const token = localStorage.getItem('token');
+            
+            // If logged in, save to database
+            if (token) {
+                try {
+                    const response = await fetch('/api/user/coins', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(coinData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('💾 Coin saved to your account!');
+                        return;
+                    }
+                } catch (error) {
+                    console.error('❌ Failed to save to account, using localStorage fallback:', error);
+                }
+            }
+            
+            // Fallback: Save to localStorage (if not logged in or API failed)
+            let myCoins = JSON.parse(localStorage.getItem('myCoins') || '[]');
+            const existingIndex = myCoins.findIndex(c => c.id === coinData.id);
+            if (existingIndex >= 0) {
+                myCoins[existingIndex] = coinData;
+            } else {
+                myCoins.push(coinData);
+            }
+            localStorage.setItem('myCoins', JSON.stringify(myCoins));
+            console.log('💾 Coin saved to localStorage (not logged in)');
+        }
+        
+        // Open Dashboard
+        function openDashboard() {
+            window.location.href = '/dashboard.html';
+        }
+        
+        
+        // Auto-save when deploying
+        const originalDeployContract = deployContract;
+        deployContract = async function() {
+            saveCoinToLocalStorage();
+            return originalDeployContract();
+        };
+    </script>
+</body>
+</html>

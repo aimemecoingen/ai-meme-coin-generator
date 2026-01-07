@@ -1,0 +1,44 @@
+========================================
+  WAT IS WAT? (Belangrijke Bestanden)
+========================================
+
+✅ DEZE HOUDEN:
+
+START.bat
+  → Hiermee start je de server!
+
+.env
+  → Je API key staat hierin (GEHEIM!)
+
+server.js
+  → De backend (niet aanraken)
+
+package.json
+  → Lijst van benodigde software
+
+public/index.html
+  → De website (kun je aanpassen)
+
+contracts/MemeToken.sol
+  → Smart contract template
+
+========================================
+
+🚀 OM TE STARTEN:
+
+1. Dubbelklik: START.bat
+2. Browser: localhost:3000
+3. Maak coins!
+
+========================================
+
+💡 TIP:
+
+Wil je kleuren/tekst aanpassen?
+→ Pas public/index.html aan
+
+Wil je stoppen?
+→ Sluit het zwarte scherm
+
+========================================
+
